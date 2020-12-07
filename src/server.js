@@ -1,7 +1,7 @@
 //MODULES IMPORTS
 import express from 'express';
 import bodyParser from 'body-parser'
-
+import usersRoutes from '../routes/usersRoutes.js'
 //APPLICATION
 const app=express();
 //PORT 
@@ -10,6 +10,9 @@ const PORT=8000;
 app.use(bodyParser.json());
 
 //ROUTES
-app.get('/',(req,res)=>{res.send("gellos");})
+app.use('/users',usersRoutes);
 
+
+
+//--------
 app.listen(PORT,()=>{console.log(`Server runngin on port:http://localhost:${PORT}`)})
